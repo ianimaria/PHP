@@ -33,9 +33,3 @@ if (!$conn) {
 
         mysqli_close($conn);}
         ?>
-        <!-- mysqli_stmt_execute($statement);
-        mysqli_stmt_close($statement);
-        echo '<script language="javascript">';
-        echo 'alert("You are successfully registered!")';
-        echo '</script>';
-        exit(); -->
