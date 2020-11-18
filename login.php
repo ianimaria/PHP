@@ -15,7 +15,7 @@
       
         </center>
       
-      <input type="submit" name="submit" value="Submit" class="w3-btn w3-section w3-center"></input>
+      <input type="login" name="login" value="Log in" class="w3-btn w3-section w3-center"></input>
 
 </form>
 </body>
