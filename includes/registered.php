@@ -7,10 +7,9 @@
     </head>
 </html>
 
-<?php
-    echo "Se intra in connect.php";
-    require('includes/connect.php');
-    echo "Succes"; ?>
+Se intra in connect.php
+    <?php require('includes/connect.php'); ?>
+Succes
 
    <!-- include ("connect.php");
     if(isset($_POST["submit"]))
