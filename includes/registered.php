@@ -20,7 +20,7 @@ if (!$conn) {
         $last_name=$_POST["last_name"];
         $phone=$_POST["phone"];
         
-        $sql = "INSERT INTO guest VALUES (null, '$email', '$pass', '$first_name', '$last_name', '$phone');";
+        $sql = "INSERT INTO guest(email, password, first_name, last_name, phone) VALUES ('$email', '$pass', '$first_name', '$last_name', '$phone');";
 
         if (mysqli_query($conn, $sql)) {
             echo '<script language="javascript">';
