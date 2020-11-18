@@ -6,3 +6,6 @@
         </body>
     </head>
 </html>
+
+<?php
+    include ('connect.php'); ?>
