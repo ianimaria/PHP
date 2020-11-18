@@ -7,11 +7,11 @@
     </head>
 </html>
 
+
 <?php
-   
+   include ("connect.php");
     if(isset($_POST["submit"]))
     {
-        require 'connect.php';
         $email=$_POST['email'];
         $password=$_POST['password'];
         $first_name=$_POST['first_name'];
@@ -19,6 +19,7 @@
         $phone=$_POST['phone'];
         echo "it works";
         $sql = "SELECT guest_id FROM guest WHERE email=?;";
+        global $conn;
         $statement=mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($statement, $sql)){
             echo "if 1";
