@@ -9,7 +9,7 @@
 
 <?php
     echo "Se intra in connect.php";
-    require('connect.php');
+    require('includes/connect.php');
     echo "Succes"; ?>
 
    <!-- include ("connect.php");
