@@ -8,8 +8,6 @@ $conn = mysqli_connect($host_name, $user_name, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
-  else
-   {echo "Merge!!!!!!";}
 
     if(isset($_POST["submit"]))
     {
