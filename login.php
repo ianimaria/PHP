@@ -7,7 +7,7 @@
 </head>
 <body>
 <form>
-<form name ="signup" method="post" action="">
+<form name ="login" method="post" action="includes/logged.php">
         <p><center><input class="w3-input-group w3-input " type="text" name="email" placeholder="Email" style="width:60%" required><br>
         </p>
         <p><input class="w3-input-group w3-input" type="password" name="password" placeholder="Password" style="width:60%" required><br>		

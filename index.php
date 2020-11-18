@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.php" media="screen">
 </head>
 <body>
+<button id="myButton" class="float-left submit-button" >Log in</button>
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "login.php";
+    };
+</script>
 <button id="myButton" class="float-left submit-button" >Sign up</button>
 <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
