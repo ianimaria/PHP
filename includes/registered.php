@@ -8,16 +8,18 @@
         $first_name=$_POST['first_name'];
         $last_name=$_POST['last_name'];
         $phone=$_POST['phone'];
-
+        echo "it works";
         $sql = "SELECT guest_id FROM guest WHERE email=?;";
         $statement=mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($statement, $sql)){
+            echo "if 1";
             header("Location; ../register.php?error=sqlerror");
             exit();
         }
         else
         {
-            mysqli_stmt_bind_param($statement, "s", "email");
+            echo "else 1";
+            mysqli_stmt_bind_param($statement, "s", $email);
             mysqli_stmt_execute($statement);
             mysqli_stmt_store_result($statement);
 
