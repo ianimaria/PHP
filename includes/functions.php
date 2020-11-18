@@ -19,3 +19,4 @@ function createUser($conn, $email, $password, $first_name, $last_name, $phone) {
     echo '</script>';
     exit();
 }
+?>
