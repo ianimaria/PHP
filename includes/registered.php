@@ -29,7 +29,6 @@
             mysqli_stmt_store_result($statement);
 
             $result = mysqli_stmt_num_rows($statement);
-            $id = uniqid($email);
 
             if ($result > 0)
             {
@@ -49,7 +48,7 @@
                     exit(); }
                 else
                     {
-                        mysqli_stmt_bind_param($statement, "sssss", $email, $checkpass, $first_name, $last_name, $phone);
+                        mysqli_stmt_bind_param($statement, "sssss", $email, $password, $first_name, $last_name, $phone);
                         mysqli_stmt_execute($statement);
                         mysqli_stmt_store_result($statement);
                         echo '<script language="javascript">';
