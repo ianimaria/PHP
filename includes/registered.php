@@ -2,7 +2,7 @@
 <html>
     <head>
         <body>
-            <?php echo "merge" ?>
+            <?php echo "You have registered successfully! :)" ?>
         </body>
     </head>
 </html>

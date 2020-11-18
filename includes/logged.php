@@ -2,7 +2,7 @@
 <html>
     <head>
         <body>
-            <?php echo "merge log in" ?>
+            <?php echo "You are logged in" ?>
         </body>
     </head>
 </html>
