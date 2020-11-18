@@ -6,12 +6,8 @@
         </body>
     </head>
 </html>
-
-Se intra in connect.php
-    <?php require('includes/connect.php'); ?>
-
-
-   <!-- include ("connect.php");
+<?php
+ 
     if(isset($_POST["submit"]))
     {
         $email=$_POST['email'];
@@ -20,6 +16,7 @@ Se intra in connect.php
         $last_name=$_POST['last_name'];
         $phone=$_POST['phone'];
         echo "it works";
+        require_once('/includes/connect.php')
         $sql = "SELECT guest_id FROM guest WHERE email=?;";
         global $conn;
         $statement=mysqli_stmt_init($conn);
@@ -74,5 +71,5 @@ Se intra in connect.php
     {
         header("Location: ../index.php");
         exit();
-    } -->
-
+    } 
+?>
