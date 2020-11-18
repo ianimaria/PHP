@@ -11,7 +11,7 @@ function createUser($conn, $email, $password, $first_name, $last_name, $phone) {
 
     $checkpass = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($statement, "ssss", $email, $checkpass, $first_name, $last_name, $phone);
+    mysqli_stmt_bind_param($statement, "sssss", $email, $checkpass, $first_name, $last_name, $phone);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
     echo '<script language="javascript">';
