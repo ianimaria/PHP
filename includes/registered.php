@@ -28,10 +28,16 @@ if (!$conn) {
             echo '</script>';
         } else {
             echo '<script language="javascript">';
-            echo 'alert("An error occured")';
-            echo '</script>';
+        echo 'alert("An error occurred")';
+        echo '</script>';
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
 
         mysqli_close($conn);}
         ?>
-      
+        <!-- mysqli_stmt_execute($statement);
+        mysqli_stmt_close($statement);
+        echo '<script language="javascript">';
+        echo 'alert("You are successfully registered!")';
+        echo '</script>';
+        exit(); -->
