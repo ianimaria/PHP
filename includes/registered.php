@@ -9,7 +9,7 @@
 
 Se intra in connect.php
     <?php require('includes/connect.php'); ?>
-Succes
+
 
    <!-- include ("connect.php");
     if(isset($_POST["submit"]))
