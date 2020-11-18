@@ -7,9 +7,12 @@
     </head>
 </html>
 
-
 <?php
-   include ("connect.php");
+    echo "Se intra in connect.php";
+    require('connect.php');
+    echo "Succes"; ?>
+
+   <!-- include ("connect.php");
     if(isset($_POST["submit"]))
     {
         $email=$_POST['email'];
@@ -72,6 +75,5 @@
     {
         header("Location: ../index.php");
         exit();
-    }
+    } -->
 
-?>
