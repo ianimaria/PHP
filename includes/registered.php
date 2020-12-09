@@ -1,36 +1,61 @@
-<?php   
-$host_name = "eu-cdbr-west-03.cleardb.net";
-$user_name = "b7d90ae59c07c3";
-$password = "ca987d22";
-$database = "heroku_417556086059fa1";
+<?php
+    include 'connect.php';
+    session_start();
+	if(isset($_POST["submit"]))
+	{
+      
+      
+    $email=$_POST['email'];
+    $pass=$_POST['password'];
+    $fname=$_POST['first_name'];
+    $lname=$_POST['last_name'];
+	$phone=$_POST['phone'];
+      
 
-$conn = mysqli_connect($host_name, $user_name, $password, $database);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+       
+        echo("$email is not a valid email address");
+      }
+      
+    else if (!preg_match("/^[0-9]*$/", $phone)) {
+        echo("$phone is not a valid phone number");
+    }
 
-    if(isset($_POST["submit"]))
-    {
-        
-        $email=$_POST["email"];
-        $pass=$_POST["password"];
-        $first_name=$_POST["first_name"];
-        $last_name=$_POST["last_name"];
-        $phone=$_POST["phone"];
-        
-        $checkpass = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO guest(EMAIL, PASSWORD, FIRST_NAME, LAST_NAME, PHONE) VALUES ('$email', '$checkpass', '$first_name', '$last_name', '$phone');";
-
-        if (mysqli_query($conn, $sql)) {
-            echo '<script language="javascript">';
-            echo 'alert("You are successfully registered!")';
-            echo '</script>';
-        } else {
-            echo '<script language="javascript">';
-        echo 'alert("An error occurred")';
-        echo '</script>';
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    else
+        {
+        $check = "SELECT email from guest WHERE email='$email'";
+        $temp = $mysqli->query($check);
+        if($temp->num_rows == 0)
+        {
+            if($mysqli->error == 0)
+            {
+                $checkpass = password_hash($pass, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO guest VALUES (default,'$email', '$checkpass', '$fname','$lname','$phone')";
+                $result = $mysqli->query($sql);
+                if($result)
+                {
+                    echo '<script language="javascript">';
+                    echo 'alert("You are successfully registered!")';		
+                    echo '</script>';
+                    header("Location:https://irooom.herokuapp.com/book.php");
+                    
+                }
+                else
+                {
+                    echo '<script language="javascript">';
+                    echo 'alert("Error!")';
+                    echo '</script>';
+                }
+            }
         }
+        
+        else
+        {
+                    echo '<script language="javascript">';
+                    echo 'alert("Email already in use, Sign up or Register with different Email")';
+                    echo '</script>';
+        }
+    }
+}
 
-        mysqli_close($conn);}
-        ?>
+?>

@@ -1,36 +1,29 @@
-<?php 
-    echo "<div align='center' style='font-size: 30px;'>iRoom</div>"; 
-?>
-
 <html>
-<head>
-    <link rel="stylesheet" href="style.php" media="screen">
+    <title></title>
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="w3.css">
+
 </head>
-<body>
-<button id="myButton1" class="float-left submit-button" >Log in</button>
-<script type="text/javascript">
-    document.getElementById("myButton1").onclick = function () {
-        location.href = "login.php";
-    };
-</script>
-<button id="myButton" class="float-left submit-button" >Sign up</button>
-<script type="text/javascript">
-    document.getElementById("myButton").onclick = function () {
-        location.href = "register.php";
-    };
-</script>
-        <div class="container">
-        <p class="main-para">
-        Am ales aceasta aplicatie pentru a face mai usoara munca detinatorilor de hotel, dar si a celor care isi doresc sa gaseasca rapid o locuinta temporara. Numele aplicatiei va fi "iRoom"</p>
+    <body style="background: url('image.jpeg') no-repeat center center fixed; background-size: cover;">
+        
 
-        <img src="db.png" class="center">
-        <p class="main-para">In ceea ce priveste baza de date, vor exista doua tipuri de useri (admin si guest). In tabela "reservation" se vor retine
-        detaliile pentru fiecare camera rezervata din hotel, iar in "room" vor fi stocate tipul de camera, pretul pentru o seara, nr. maxim de persoane
-        care pot rezerva camera, dar si disponibilitatea camerei la momentul respectiv.</p>
+<div class="w3-top">
+  <ul class="w3-navbar w3-text-white" id="myNavbar">
+    <li><a href="#" class="w3-padding-large">HOME</a></li>
+    <li><a href="https://irooom.herokuapp.com/about.php" class="w3-padding-large">ABOUT</a></li>
+    <li><a href="https://irooom.herokuapp.com/register.php" class="w3-padding-large">SIGN UP</a></li>
+    <li class="w3-hide-small w3-right">
+      <a href="https://irooom.herokuapp.com/login.php" class="w3-padding-large w3-red w3-hover-text-black">LOG IN</a>
+    </li>
+  </ul>
+</div>
 
-        <p class="main-para">Aplicatia va permite autentificarea utilizatorilor, inchirierea camerelor in cazul clientilor in functie de disponibilitate, acceptarea sau refuzarea 
-        rezervarilor de catre admin.</p>
-</div>  
 
-</body>
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-xlarge w3-white w3-xlarge w3-wide w3-animate-opacity" style="border-radius:12px;">iRoom</span>
+  </div>
+
+
+        </body>
 </html>

@@ -1,21 +1,53 @@
 <?php
-
-$host_name = "eu-cdbr-west-03.cleardb.net";
-$user_name = "b7d90ae59c07c3";
-$password = "ca987d22";
-$database = "heroku_417556086059fa1";
-
-$conn = mysqli_connect($host_name, $user_name, $password, $database);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
-
-    if(isset($_POST["login"]))
-    {
+  include 'connect.php';
+  session_start();
+  ob_start();
+	if(isset($_POST["submit"]))
+	{
+     
+      
+      $email = $_POST['email'];
+      $password = $_POST['password']; 
+      
+      $sql = "SELECT * FROM guest WHERE email='$email' AND password='$password'";
+      $result = $mysqli->query($sql);
+      	if ($result->num_rows == 1) 
+      	{
+      		$guest = $result->fetch_assoc();
+      		$_SESSION['guestname']=$guest['first_name']." ".$guest['last_name'];
+         	$_SESSION['user'] = $email;
+           $_SESSION['guestid'] = $guest['guest_id'];
         
-        $email=$_POST["email"];
-        $pass=$_POST["password"];
+        	header("Location:https://irooom.herokuapp.com/book.php");             
+      	}
+    	
+        else 
+        {
+          $sql = "SELECT * FROM manager WHERE email='$email' AND password='$password'";
+          $temp = $mysqli->query($sql);
 
-        $sql = "SELECT * From guest WHERE email = '{$email}' ";
-}
+          if ($temp->num_rows == 1) 
+      	{
+      	
+      		$man = $temp->fetch_assoc();
+      		$_SESSION['managername']=$man['first_name']." ".$man['last_name'];
+         	$_SESSION['user'] = $email;
+         	$_SESSION['manager_id'] = $man['manager_id'];
+     	
+        	header("Location:https://irooom.herokuapp.com/manager.php");             
+          
+        }
+        
+          else 
+          {
+            echo '<script language="javascript">';
+            echo 'alert("Email or Password entered is invalid. Please try again.")';
+            echo '</script>';
+     
+        }	
+
+        }
+
+   }
 ?>
+
