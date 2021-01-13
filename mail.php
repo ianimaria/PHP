@@ -20,7 +20,7 @@ require 'PHPMailer.php';
 require 'SMTP.php';
 
     $mail = new PHPMailer;
-	// $mail->isSMTP();
+	$mail->isSMTP();
 	$mail->Host='smtp.gmail.com';
 	$mail->Port=587;
 	$mail->SMTPAuth=true;
