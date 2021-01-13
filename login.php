@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="register.css">
 </head>
 <body>
-<form action="https://irooom.herokuapp.com/includes/logged.php" method="post">
+<!-- <form action="https://irooom.herokuapp.com/includes/logged.php" method="post"> -->
+  <form action="https://irooom.herokuapp.com/logged.php" method="post">
         <p><center><input class="w3-input-group w3-input " type="text" name="email" placeholder="Email" style="width:60%" required><br>
         </p>
         <p><input class="w3-input-group w3-input" type="password" name="password" placeholder="Password" style="width:60%" required><br>		

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
     <title></title>
    <head>
@@ -10,10 +13,13 @@
 
 <div class="w3-top">
   <ul class="w3-navbar w3-text-white" id="myNavbar">
-    <li><a href="#" class="w3-padding-large">HOME</a></li>
+    <li><a href="https://irooom.herokuapp.com/index.php" class="w3-padding-large">HOME</a></li>
+    <!-- <li><a href="https://irooom.herokuapp.com/about.php" class="w3-padding-large">ABOUT</a></li> -->
     <li><a href="https://irooom.herokuapp.com/about.php" class="w3-padding-large">ABOUT</a></li>
+    <!-- <li><a href="https://irooom.herokuapp.com/register.php" class="w3-padding-large">SIGN UP</a></li> -->
     <li><a href="https://irooom.herokuapp.com/register.php" class="w3-padding-large">SIGN UP</a></li>
     <li class="w3-hide-small w3-right">
+      <!-- <a href="https://irooom.herokuapp.com/login.php" class="w3-padding-large w3-red w3-hover-text-black">LOG IN</a> -->
       <a href="https://irooom.herokuapp.com/login.php" class="w3-padding-large w3-red w3-hover-text-black">LOG IN</a>
     </li>
   </ul>

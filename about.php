@@ -10,13 +10,13 @@
 <button id="myButton1" class="float-left submit-button" >Log in</button>
 <script type="text/javascript">
     document.getElementById("myButton1").onclick = function () {
-        location.href = "login.php";
+        location.href = "https://irooom.herokuapp.com/login.php";
     };
 </script>
 <button id="myButton" class="float-left submit-button" >Sign up</button>
 <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
-        location.href = "register.php";
+        location.href = "https://irooom.herokuapp.com/register.php";
     };
 </script>
         <div class="container">
